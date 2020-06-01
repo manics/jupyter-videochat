@@ -37,7 +37,8 @@ _("jlpm")
 _('jlpm', 'build')
 
 # repo2docker installs JupyterLab 1. Since it's updated to 2 extensions must also be updated
-_('jupyter', 'labextension', 'update', '--all')
+# Skip building since it'll be build when the extenstion is installed
+_('jupyter', 'labextension', 'update', '--all', '--no-build')
 
 # Link your development version of the extension with JupyterLab
 _('jupyter', 'labextension', 'link', '.')
