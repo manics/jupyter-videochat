@@ -32,7 +32,7 @@ def _(*args, **kwargs):
         sys.exit(return_code)
 
 # repo2docker installs JupyterLab 1. Since it's updated to 2 extensions must also be updated
-_('jupyter', 'labextension', 'update', '--all', '--minimize=False', '--no-build')
+_('jupyter', 'labextension', 'update', '--all', '--minimize=False')
 
 # install dependencies
 _("jlpm")
