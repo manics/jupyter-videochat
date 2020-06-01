@@ -31,13 +31,13 @@ def _(*args, **kwargs):
         print("\nERROR", return_code, " ".join(args))
         sys.exit(return_code)
 
+# repo2docker installs JupyterLab 1. Since it's updated to 2 extensions must also be updated
+_('jupyter', 'labextension', 'update', '--all', '--minimize=False', '--no-build')
+
 # install dependencies
 _("jlpm")
 
 _('jlpm', 'build')
-
-# repo2docker installs JupyterLab 1. Since it's updated to 2 extensions must also be updated
-_('jupyter', 'labextension', 'update', '--all', '--minimize=False')
 
 # Link your development version of the extension with JupyterLab
 _('jupyter', 'labextension', 'link', '.')
